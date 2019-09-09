@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Grades";
+}
+
+<h2>Grades</h2>
+<form action="/Loan/Grades" method="post">
+    <label>Grade 1:</label>
+    <input type="text" name="grade1" required />
+    <label>Grade 2:</label>
+    <input type="text" name="grade2" required />
+    <label>Grade 3:</label>
+    <input type="text" name="grade3" required /><br />
+    <input type="submit" value="Did you pass?" />
+</form>
+
+@if (ViewBag.grade != null)
+{
+    String grade = ViewBag.grade;
+    if (grade == "A" || grade == "B")
+    {
+    <p> You did excellent! Good Job<h3 style="color:green">@grade</h3></p>
+    }
+    else if (grade == "C" || grade == "D")
+    {
+        <p>You barely passed :D <h3 style="color:darkgoldenrod">@grade</h3></p>
+    }
+    else
+    {
+        <p>Ahhh you need to change programs <h3 style="color:red">@grade</h3></p>
+    }
+}
+<br />Click here for @Html.ActionLink("Interest Rate Calculator", "Index", "Loan")

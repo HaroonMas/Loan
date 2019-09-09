@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Loan Calculator</h2>
+
+<form action="/Loan/Index" method="post">
+    Enter your Initial Investment Amount:
+    <input type="number" name="balance" />
+
+    Enter the Interest Rate:
+    <input type="number" name="IR" />
+
+    Number of Years:
+    <input type="number" name="year" />
+    <br /><br />
+    <input type="Submit" value="Start Investing" />
+</form>
+
+
+@if (ViewBag.InVest != null || ViewBag.IR != null)
+{
+    <p>
+        Given @ViewBag.Year years, an investment of $@ViewBag.balance, and an annual rate of %@ViewBag.IR, you will
+        have $@ViewBag.Total
+    </p>;
+
+}
+
+<br /> Click here for @Html.ActionLink("Grades Calculator", "Grades", "Loan")
