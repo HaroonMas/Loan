@@ -6,11 +6,11 @@
 <h2>Grades</h2>
 <form action="/Loan/Grades" method="post">
     <label>Grade 1:</label>
-    <input type="text" name="grade1" required />
+    <input type="number" name="grade1" min="0" max="100" required />
     <label>Grade 2:</label>
-    <input type="text" name="grade2" required />
+    <input type="number" name="grade2" min="0" max="100" required />
     <label>Grade 3:</label>
-    <input type="text" name="grade3" required /><br />
+    <input type="number" name="grade3" min="0" max="100" required /><br />
     <input type="submit" value="Did you pass?" />
 </form>
 
